@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>
+        Voice Controlled Music App.
+    </title>
+    <link rel="stylesheet" type="text/css" href="assets/login.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#"><img id="musicicon" src="assets/music-player.png" alt="music-player-icon"></a>
+        <h2 class="headtext">Voice Controlled Music Player</h2>
+        <nav>
+            <div class="nav">
+                <ul class="ul">
+                    <a href="#">Home</a>
+                    <a href="#">SignUp</a>
+                    <a href="#">Login</a>
+                    <a href="#">Top Tracks</a>
+                    <a href="#">Recommended</a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <% if(error){ %>
+        <center>
+            <h3 class="msg">Username
+                <%= error.username %> has been taken. Try another one.</h3>
+        </center>
+        <% } %>
+
+            <% if(errpass){ %>
+                <center>
+                    <h3 class="msg">
+                        <%= errpass %>
+                    </h3>
+                </center>
+                <% } %>
+
+                    <form class="form" method="POST" action="/login">
+                        <div class="label"><label>Login Form</label></div>
+                        <input type="text" placeholder="Username" class="namefield" name="username" required><br/>
+                        <input type="password" placeholder="Password" class="passfield" name="password" required>
+                        <input type="submit" class="submit" value="Submit"><br>
+                        <a href="#" class="forgot">forgot password??</a>
+                    </form>
+</body>
+
+</html>

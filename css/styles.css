@@ -1,0 +1,22 @@
+#spinner {
+  display: none;
+  position: fixed;
+  z-index: 111;
+  left: 50%;
+  top: 80%;
+}
+
+.glyphicon-headphones {
+  color: crimson;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+
+.big {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.context{
+  margin-bottom: 10px;
+}

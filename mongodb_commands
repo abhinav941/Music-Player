@@ -1,0 +1,50 @@
+> show dbs
+
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+
+> use abhishek
+switched to db abhishek
+
+> show collections
+login
+
+> db.login.insert({"name":"abhishek sharma"});
+WriteResult({ "nInserted" : 1 })
+
+> db.login.find();
+
+{ "_id" : ObjectId("5c8119c23a9413dd4e4450e5"), "name" : "abhishek" }
+{ "_id" : ObjectId("5c83cbc9c2a0c68d8fb6e5ee"), "name" : "abhishek sharma" }
+
+> db.login.findOne();
+
+{ "_id" : ObjectId("5c8119c23a9413dd4e4450e5"), "name" : "abhishek" }
+
+> db.login.find({"name":"abhishek"});
+
+{ "_id" : ObjectId("5c8119c23a9413dd4e4450e5"), "name" : "abhishek" }
+
+> db.login.find({},{"_id":0});
+
+{ "name" : "abhishek" }
+{ "name" : "abhishek sharma" }
+
+> db.login.find({},{"_id":0}).limit(1);
+
+{ "name" : "abhishek" }
+
+> db.login.find({},{"_id":0}).limit(1).skip(1);
+
+{ "name" : "abhishek sharma" }
+
+> db.login.find({},{"_id":0}).sort({"name":1});
+
+{ "name" : "abhishek" }
+{ "name" : "abhishek sharma" }
+
+> db.login.find({},{"_id":0}).sort({"name":-1});
+
+{ "name" : "abhishek sharma" }
+{ "name" : "abhishek" }
